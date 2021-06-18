@@ -3,15 +3,26 @@
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 // Usiamo i nuovi metodi degli array foreach o filter.
 
-
-const vet = [];
+//creo e carico il vettore 
+const numbers = [];
+const a = 2;
+const b = 7;
 
 for(let i =0 ; i < 10 ; i++){
-    vet[i] = rand(0, 100);
+    numbers[i] = rand(0, 100);
 }
 
-console.log(vet);
+console.log(numbers);
 
+let newNumbers = numbers.filter((element,index ,a,b) => {
+    if (index <= a && index >= b){
+        
+        return true;
+    }
+    else{return false};
+});
+
+console.log(newNumbers);
 
 // functions
 
