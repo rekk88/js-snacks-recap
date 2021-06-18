@@ -5,8 +5,6 @@
 
 //creo e carico il vettore 
 const numbers = [];
-const a = 2;
-const b = 7;
 
 for(let i =0 ; i < 10 ; i++){
     numbers[i] = rand(0, 100);
@@ -14,17 +12,25 @@ for(let i =0 ; i < 10 ; i++){
 
 console.log(numbers);
 
-let newNumbers = numbers.filter((element,index ,a) => {
-    if (index >= a){
-        
-        return true;
-    }
-    else{return false};
-});
+let mandarino = newArray(numbers , 2 , 7);
+console.log(mandarino);
 
-console.log(newNumbers);
+
+//creo il nuovo array "filtrato"
+
 
 // functions
+
+function newArray(vet , min , max){
+    let newNumbers = vet.filter((element,index,array) => { //il terzo parametro array rappresenta l'array di partenza e quindi vet (in questo caso)
+        if (index >= min && index <=max){
+            console.log(array[index]); 
+            return true;
+        }
+        else{return false};
+    });
+    return newNumbers;
+}
 
 function rand(min , max){
     return Math.floor(Math.random() * (max - min + 1) + min);
