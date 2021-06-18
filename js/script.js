@@ -14,8 +14,8 @@ for(let i =0 ; i < 10 ; i++){
 
 console.log(numbers);
 
-let newNumbers = numbers.filter((element,index ,a,b) => {
-    if (index <= a && index >= b){
+let newNumbers = numbers.filter((element,index ,a) => {
+    if (index >= a){
         
         return true;
     }
